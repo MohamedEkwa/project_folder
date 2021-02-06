@@ -12,7 +12,7 @@ const postData = async (url = "", data = {}) => {
 
   try {
     const newData = await response.json();
-    console.log(newData);
+    // console.log(newData);
     return newData;
   } catch (error) {
     console.log("error", error);
@@ -22,4 +22,4 @@ const postData = async (url = "", data = {}) => {
 
 // TODO-Call Function
 
-postData("/addAnimal", {animal: "lion"});
+postData("/addAnimal", { animal: "lion" });

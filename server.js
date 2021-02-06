@@ -27,19 +27,18 @@ function listening() {
 }
 
 // GET route
-app.get("/", sendData);
+app.get("/all", sendData);
 
 function sendData(request, response) {
-  response.send('medo');
+  response.send(projectData);
 }
 
 // POST route
-// app.post("/add", callBack);
+app.post("/add", callBack);
 
-// function callBack(req, res) {
-//   data.push();
-//   res.send("POST received");
-// }
+function callBack(req, res) {
+  res.send("POST received");
+}
 
 // POST an animal
 const data = [];
@@ -48,6 +47,5 @@ app.post("/animal", addAnimal);
 
 function addAnimal(req, res) {
   data.push(req.body);
-  console.log(req);
-  console.log(data);
 }
+console.log(data);
